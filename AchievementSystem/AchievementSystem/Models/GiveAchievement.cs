@@ -5,24 +5,18 @@ using System.Web;
 
 namespace AchievementSystem.Models
 {
-    public class GiveAchievement
+    public class GiveAchievement : Achievements
     {
-        public void GiveAchievments(int period, List<int> arr1, List<int> arr2, Human human1, Human human2)
+        public void GiveAchievments(object obj, Achievements achievements)
         {
-            Random rand = new Random();
-            for (int i = 0; i < period; i++)
+            if(obj is Child child && achievements.AchieveType == AchieveType.Child)
             {
-                int achieve = rand.Next(1, 3);
+                child.childAchievments.Add(achievements);
+            }
 
-                if (achieve == (int)human1)
-                {
-                    arr1.Add(1);
-                }
-
-                if (achieve == (int)human2)
-                {
-                    arr2.Add(2);
-                }
+            if(obj is Educator educator && achievements.AchieveType == AchieveType.Educator)
+            {
+                educator.educatorAchievments.Add(achievements);
             }
         }
     }

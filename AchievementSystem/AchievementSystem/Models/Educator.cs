@@ -26,14 +26,8 @@ namespace AchievementSystem.Models
                 return status;
             }
         }
-
-        public Human educator;
+        
         string status;
-        public List<int> educatorAchievments = new List<int>();
-
-        public Educator(Human human)
-        {
-            educator = human;
-        }
+        public List<Achievements> educatorAchievments = new List<Achievements>();
     }
 }

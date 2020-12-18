@@ -124,10 +124,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Achievements.cs" />
+    <Compile Include="Models\AchieveType.cs" />
     <Compile Include="Models\Child.cs" />
     <Compile Include="Models\Educator.cs" />
     <Compile Include="Models\GiveAchievement.cs" />
-    <Compile Include="Models\Human.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

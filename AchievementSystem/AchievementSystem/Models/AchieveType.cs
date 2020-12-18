@@ -5,8 +5,9 @@ using System.Web;
 
 namespace AchievementSystem.Models
 {
-    public class Child
-    {        
-        public List<Achievements> childAchievments = new List<Achievements>();
+    public enum AchieveType
+    {
+        Child,
+        Educator
     }
 }

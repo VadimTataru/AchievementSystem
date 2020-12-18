@@ -5,9 +5,9 @@ using System.Web;
 
 namespace AchievementSystem.Models
 {
-    public enum Human : int
+    public class Achievements
     {
-        Educator = 1,
-        Child = 2
+        public string Name;
+        public AchieveType AchieveType;
     }
 }

@@ -10,16 +10,25 @@ namespace AchievementSystem.Controllers
     {
         public ActionResult Index()
         {
-            Models.Educator educator = new Models.Educator(Models.Human.Educator);
-            Models.Child child = new Models.Child(Models.Human.Child);
-
-            Random rand = new Random();
-            int achievPeriod = rand.Next(35, 60); //Ачивки за период
-
+            Models.Educator educator = new Models.Educator();
+            Models.Child child = new Models.Child();
             Models.GiveAchievement giveAchievement = new Models.GiveAchievement();
-            giveAchievement.GiveAchievments(achievPeriod, educator.educatorAchievments, child.childAchievments, educator.educator, child.child);
 
-            ViewBag.Period = achievPeriod;
+            Models.Achievements achievement = new Models.Achievements();
+            Models.Achievements achievement1 = new Models.Achievements();
+            achievement1.AchieveType = Models.AchieveType.Educator;
+
+            Models.Achievements[] achievements = new Models.Achievements[2] {achievement, achievement1 }; 
+            Random rand = new Random();
+
+            for(int i = 0; i < 10; i++)
+            {
+                int index = rand.Next(0, 2);
+                giveAchievement.GiveAchievments(educator, achievements[index]);
+                giveAchievement.GiveAchievments(child, achievements[index]);
+            }
+
+            ViewBag.Period = educator.educatorAchievments.Count + child.childAchievments.Count;
             ViewBag.EducatorStat = educator.Status;
             ViewBag.EducatorAchieve = educator.educatorAchievments.Count;
             ViewBag.ChildAchieve = child.childAchievments.Count;
