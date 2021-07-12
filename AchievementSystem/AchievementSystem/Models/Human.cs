@@ -5,8 +5,8 @@ using System.Web;
 
 namespace AchievementSystem.Models
 {
-    public class Child : Human
-    {        
-
+    public class Human
+    {
+        public List<Achievements> Achievements = new List<Achievements>();
     }
 }

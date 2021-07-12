@@ -7,16 +7,16 @@ namespace AchievementSystem.Models
 {
     public class GiveAchievement : Achievements
     {
-        public void GiveAchievments(object obj, Achievements achievements)
+        public void GiveAchievments(Achievements achievements, Human human)
         {
-            if(obj is Child child && achievements.AchieveType == AchieveType.Child)
+            if(achievements.AchieveType == AchieveType.Child && human is Child child)
             {
-                child.childAchievments.Add(achievements);
+                child.Achievements.Add(achievements);
             }
 
-            if(obj is Educator educator && achievements.AchieveType == AchieveType.Educator)
+            if (achievements.AchieveType == AchieveType.Educator && human is Educator educator)
             {
-                educator.educatorAchievments.Add(achievements);
+                educator.Achievements.Add(achievements);
             }
         }
     }

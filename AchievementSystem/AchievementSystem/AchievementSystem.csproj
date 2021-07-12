@@ -128,7 +128,10 @@
     <Compile Include="Models\AchieveType.cs" />
     <Compile Include="Models\Child.cs" />
     <Compile Include="Models\Educator.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\GiveAchievement.cs" />
+    <Compile Include="Models\Human.cs" />
+    <Compile Include="Models\Man.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +167,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

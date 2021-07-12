@@ -5,17 +5,17 @@ using System.Web;
 
 namespace AchievementSystem.Models
 {
-    public class Educator
+    public class Educator : Human
     {
         public string Status
         {
             get
             {
-                if (educatorAchievments.Count < 17)
+                if (Achievements.Count < 2)
                 {
                     status = "бронзовый статус";
                 }
-                else if (educatorAchievments.Count < 26)
+                else if (Achievements.Count < 5)
                 {
                     status = "золотой статус";
                 }
@@ -28,6 +28,5 @@ namespace AchievementSystem.Models
         }
         
         string status;
-        public List<Achievements> educatorAchievments = new List<Achievements>();
     }
 }
